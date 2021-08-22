@@ -1,0 +1,47 @@
+{
+  "name": "@typesense/nestjs",
+  "version": "0.0.1",
+  "description": "Typesense - Lightning-fast, Open Source Search.",
+  "author": "Matej Buncek",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint \"lib/**/*.ts\" --fix",
+    "format": "prettier \"lib/**/*.ts\" --write",
+    "build": "rm -rf dist && tsc -p tsconfig.json",
+    "precommit": "lint-staged",
+    "prepublish:npm": "npm run build",
+    "publish:npm": "npm publish --access public",
+    "prerelease": "npm run build",
+    "release": "release-it"
+  },
+  "peerDependencies": {
+    "@nestjs/common": "^6.0.0 || ^7.0.0 || ^8.0.0",
+    "rxjs": "^6.2.1 || ^7.2.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "13.1.0",
+    "@commitlint/config-angular": "13.1.0",
+    "@nestjs/common": "8.0.6",
+    "@types/node": "14.17.11",
+    "@typescript-eslint/eslint-plugin": "4.29.2",
+    "@typescript-eslint/parser": "4.29.2",
+    "eslint": "7.32.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-import": "2.24.1",
+    "husky": "7.0.1",
+    "lint-staged": "11.1.2",
+    "prettier": "2.3.2",
+    "release-it": "14.11.5",
+    "rxjs": "7.3.0",
+    "typescript": "4.3.5"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.15.3",
+    "typesense": "^0.14.0"
+  }
+}
